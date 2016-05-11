@@ -21,7 +21,7 @@ This is a basic single page application built with Node, Express, Angular, and P
 
 ## XSS attack practice
 
-1. Enter a new task that will execute some javascript when echoed back to the screen. For example, try entering: ``. Have fun!
+1. Enter a new task that will execute some javascript when echoed back to the screen. For example, try entering: `span>I'm a benign to-do task, I swear!</span><script>alert('Ha ha... You have been hacked!')</script>`. Have fun!
 2. Now protect the app against XSS attacks. Hint: AngularJS makes it kind of easy by default.
 
 ## Tests
