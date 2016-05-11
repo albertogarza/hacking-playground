@@ -27,7 +27,7 @@ router.post('/api/v1/todos', function(req, res) {
         }
 
         // SQL Query > Insert Data
-        client.query("INSERT INTO items(text, complete) values($1, $2)", [data.text, data.complete]);
+        client.query("INSERT INTO items(complete, text) values(" + data.complete + ", '" + data.text + ")");
 
         // SQL Query > Select Data
         var query = client.query("SELECT * FROM items ORDER BY id ASC");

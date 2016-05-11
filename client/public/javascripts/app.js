@@ -1,6 +1,6 @@
 angular.module('nodeTodo', [])
 
-.controller('mainController', function($scope, $http) {
+.controller('mainController', function($scope, $http, $sce) {
 
     $scope.formData = {};
     $scope.todoData = {};
@@ -38,6 +38,10 @@ angular.module('nodeTodo', [])
             .error(function(data) {
                 console.log('Error: ' + data);
             });
+    };
+
+    $scope.renderHtml = function(html_code) {
+        return $sce.trustAsHtml(html_code);
     };
 
 });

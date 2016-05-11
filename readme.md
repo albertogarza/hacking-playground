@@ -2,6 +2,8 @@
 
 Check out the blog post >> http://mherman.org/blog/2015/02/12/postgresql-and-nodejs
 
+Check out the original project >> https://github.com/mjhea0/node-postgres-todo
+
 This is a basic single page application built with Node, Express, Angular, and PostgreSQL.
 
 ## Quick Start
@@ -11,6 +13,16 @@ This is a basic single page application built with Node, Express, Angular, and P
 1. Start your Postgres server and create a database called "todo"
 1. Create the database tables: `node server/models/database.js`
 1. Start the server: `$ npm start`
+
+## SQL injection practice
+
+1. Enter a new task that will do something else as well. For example, try entering: `legit to-do task!'); INSERT INTO items(complete, text) values(true, 'You''ve been hacked!'); select now(`. Feel free to wreck as much as you can, though. Have fun!
+2. Now protect the server against SQLi attacks.
+
+## XSS attack practice
+
+1. Enter a new task that will execute some javascript when echoed back to the screen. For example, try entering: ``. Have fun!
+2. Now protect the app against XSS attacks. Hint: AngularJS makes it kind of easy by default.
 
 ## Tests
 
